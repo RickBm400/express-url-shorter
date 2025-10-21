@@ -7,7 +7,6 @@ import express from 'express'
 config();
 
 const app = express();
-app.set('trust proxy', true);
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -16,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 const baseUrl = process.env.BASE_URL;
 
-app.post('/shorten', async (req, res) => {
+app.post('/', async (req, res) => {
   const { longUrl } = req.body;
   if (!longUrl) {
     return res.status(400).json({ error: 'longUrl is required' });

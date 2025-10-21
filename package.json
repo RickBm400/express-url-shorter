@@ -4,6 +4,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
+    "start": "node main.js",
     "dev": "node main.js",
     "debug": "node --watch --inspect main.js"
   },

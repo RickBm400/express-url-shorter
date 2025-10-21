@@ -7,6 +7,7 @@ import express from 'express'
 config();
 
 const app = express();
+app.set('trust proxy', true);
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGODB_URI)
